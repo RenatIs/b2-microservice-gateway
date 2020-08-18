@@ -21,4 +21,12 @@ public class MainController {
                 .log().all()
                 .get("/health").asString();
     }
+
+    @GetMapping("/booking-bs")
+    public String getBookingServiceWithBS() {
+        return RestAssured.given()
+                .baseUri("booking-service:8080/bs")
+                .log().all()
+                .get("/health").asString();
+    }
 }
