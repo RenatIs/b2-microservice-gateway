@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: net-service-gateway
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: gateway
   ports:
@@ -33,7 +33,7 @@ spec:
         app: gateway
     spec:
       containers:
-        - image: gcr.io/b2-microservices/gateway-docker
+        - image: gcr.io/b2-ms-286812/gateway-docker
           name: gateway
           ports:
             - containerPort: 8080

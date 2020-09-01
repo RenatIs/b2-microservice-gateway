@@ -17,7 +17,7 @@ public class MainController {
     @GetMapping("/booking")
     public String getBookingService() {
         return RestAssured.given()
-                .baseUri("booking-service:8080")
+                .baseUri("net-service-booking-service")
                 .log().all()
                 .get("/health").asString();
     }
@@ -25,7 +25,7 @@ public class MainController {
     @GetMapping("/booking-bs")
     public String getBookingServiceWithBS() {
         return RestAssured.given()
-                .baseUri("booking-service:8080/bs")
+                .baseUri("net-service-booking-service/bs")
                 .log().all()
                 .get("/health").asString();
     }
